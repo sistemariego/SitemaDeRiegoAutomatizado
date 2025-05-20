@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | Tienda de Riego Automatizado</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Finalizar Compra</h1>
+        <nav>
+            <ul>
+                <li><a href="src/index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="checkout.html" class="active">Finalizar Compra</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Resumen de tu compra</h2>
+            <div id="checkout-cart" style="margin-bottom:24px;"></div>
+            <form id="checkout-form" style="max-width:400px;margin:auto;">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="direccion">Dirección de envío:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Confirmar Compra</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Tienda de Riego Automatizado. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Simulación: muestra productos del carrito usando localStorage (opcional)
+        const checkoutCart = document.getElementById('checkout-cart');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            checkoutCart.innerHTML = '<p>Tu carrito está vacío.</p>';
+        } else {
+            let total = 0;
+            checkoutCart.innerHTML = cart.map(item => {
+                total += item.price * item.quantity;
+                return `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee;">
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span style="font-weight:bold;">$${item.price * item.quantity}</span>
+                </div>`;
+            }).join('') + `<div style="text-align:right;font-size:1.2em;font-weight:bold;margin-top:12px;">Total: $${total}</div>`;
+        }
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu compra! Pronto recibirás un correo de confirmación.');
+            localStorage.removeItem('cart');
+            window.location.href = "src/index.html";
+        });
+    </script>
+</body>
+</html>

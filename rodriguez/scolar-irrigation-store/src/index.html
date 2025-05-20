@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online de Sistemas de Riego Automatizado</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(69, 160, 73, 0.8), rgba(46, 125, 50, 0.8)), url('images/fondo-naturaleza-general.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        header {
+            background: rgba(45, 125, 50, 0.9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #f4f8fb; /* Cambiar a un tono claro que combine */
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(69, 160, 73, 0.8); /* Fondo verde translúcido */
+            transition: background 0.3s, color 0.3s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+            color: #2e7d32; /* Texto verde oscuro */
+        }
+        main {
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #productos h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        #products div {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #products div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background: rgba(45, 125, 50, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Sistemas de Riego Automatizado</h1>
+        <nav>
+            <ul>
+                <li><a href="#productos" class="active">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a href="#carrito">Carrito <span id="cart-count" style="background:#45a049;color:#fff;padding:2px 8px;border-radius:8px;font-size:0.9em;margin-left:4px;">0</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+            <div id="products" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+                <!-- Producto 1 -->
+                <div style="text-align:center;">
+                    <img id="producto1-img" src="images/1.jpg" alt="Sistema de Riego Automatizado" style="max-width:200px;border-radius:8px;">
+                    <p id="producto1-desc">Sistema de Riego Automatizado</p>
+                </div>
+                <!-- Producto 2 -->
+                <div style="text-align:center;">
+                    <img id="producto2-img" src="images/2.jpg" alt="Sistema de Riego Automatizado" style="max-width:200px;border-radius:8px;">
+                    <p id="producto2-desc">Sistema de Riego Automatizado</p>
+                </div>
+                <!-- Producto 3 -->
+                <div style="text-align:center;">
+                    <img id="producto3-img" src="images/3.jpg" alt="Sistema de Riego Automatizado" style="max-width:200px;border-radius:8px;">
+                    <p id="producto3-desc">Sistema de Riego Automatizado</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tienda de Riego Automatizado. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Panel flotante de WhatsApp -->
+    <div id="whatsapp-panel" style="position:fixed;bottom:32px;right:32px;z-index:1000;">
+        <button onclick="document.getElementById('whatsapp-modal').style.display='block'" style="background:#25d366;color:#fff;border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-size:2em;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;">
+            <span style="font-size:1.5em;">&#128241;</span>
+        </button>
+        <div id="whatsapp-modal" style="display:none;position:absolute;bottom:70px;right:0;background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,0.25);padding:20px 24px;min-width:260px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <strong style="color:#25d366;font-size:1.2em;">WhatsApp</strong>
+                <button onclick="document.getElementById('whatsapp-modal').style.display='none'" style="background:none;border:none;font-size:1.5em;cursor:pointer;color:#333;">&times;</button>
+            </div>
+            <p style="margin:12px 0 0 0;font-size:0.95em;color:#555;">¿Necesitas ayuda? <br>Escríbenos por WhatsApp.</p>
+            <a href="https://wa.me/593982738563" target="_blank" style="display:block;background:#25d366;color:#fff;text-align:center;padding:12px 0;border-radius:12px;margin-top:12px;text-decoration:none;font-weight:bold;font-size:1em;">Chatear</a>
+        </div>
+    </div>
+
+    <!-- Panel flotante de Email -->
+    <div id="email-panel" style="position:fixed;bottom:32px;right:104px;z-index:1000;">
+        <button onclick="document.getElementById('email-modal').style.display='block'" style="background:#35424a;color:#fff;border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-size:2em;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 0.2s;">
+            <span style="font-size:1.5em;">&#9993;</span>
+        </button>
+        <div id="email-modal" style="display:none;position:absolute;bottom:70px;right:0;background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,0.25);padding:20px 24px;min-width:260px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <strong style="color:#35424a;font-size:1.2em;">Contacto Email</strong>
+                <button onclick="document.getElementById('email-modal').style.display='none'" style="background:none;border:none;font-size:1.5em;cursor:pointer;color:#333;">&times;</button>
+            </div>
+            <p style="margin:12px 0 0 0;font-size:0.95em;color:#555;">¿Prefieres escribirnos por correo?</p>
+            <a href="mailto:dr344245@gmail.com" style="display:block;background:#35424a;color:#fff;text-align:center;padding:12px 0;border-radius:12px;margin-top:12px;text-decoration:none;font-weight:bold;font-size:1em;">Enviar Email</a>
+        </div>
+    </div>
+
+    <!-- Panel flotante grande de carrito -->
+    <div id="carrito-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;">
+        <div style="background:linear-gradient(135deg, #ff9800cc 0%, #ffe0b2cc 100%), url('images/fondo-agua.jpg') no-repeat center center;background-size:cover;max-width:500px;width:90%;padding:40px 30px;border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin:auto;position:relative;display:flex;flex-direction:column;align-items:center;">
+            <button onclick="document.getElementById('carrito-modal').style.display='none'" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:2em;line-height:1;cursor:pointer;color:#ff9800;">&times;</button>
+            <h2 style="color:#ff9800;margin-bottom:20px;font-size:1.8em;text-shadow:1px 1px 2px rgba(0,0,0,0.3);">Carrito de Compras</h2>
+            <div id="lista-carrito" style="font-size:1em;color:#333;text-align:center;width:100%;max-height:300px;overflow-y:auto;border:1px solid #ddd;padding:10px;border-radius:12px;background:rgba(255,255,255,0.8);">
+                <!-- Los productos del carrito se mostrarán aquí -->
+                <p style="color:#555;font-size:0.95em;">Tu carrito está vacío.</p>
+            </div>
+            <button id="comprar" style="display:block;width:100%;background:#ff9800;color:#fff;text-align:center;padding:14px 0;border-radius:14px;margin-top:20px;border:none;font-weight:bold;font-size:1.1em;cursor:pointer;transition:background 0.3s;">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Panel flotante grande de contacto -->
+    <div id="contacto-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;">
+        <div style="background:linear-gradient(135deg, #2e7d32cc 0%, #b2dfdbcc 100%), url('images/fondo-naturaleza.jpg') no-repeat center center;background-size:cover;max-width:500px;width:90%;padding:40px 30px;border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,0.4);margin:auto;position:relative;display:flex;flex-direction:column;align-items:center;">
+            <button onclick="document.getElementById('contacto-modal').style.display='none'" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:2em;line-height:1;cursor:pointer;color:#35424a;">&times;</button>
+            <h2 style="color:#35424a;margin-bottom:20px;font-size:1.8em;text-shadow:1px 1px 2px rgba(0,0,0,0.3);">Datos de Contacto</h2>
+            <div style="font-size:1em;color:#333;text-align:center;width:100%;line-height:1.6;background:rgba(255,255,255,0.8);padding:10px;border-radius:12px;">
+                <p><strong>Email:</strong> dr344245@gmail.com</p>
+                <p><strong>Teléfono:</strong> +593 98 273 8563</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/593982738563" target="_blank" style="color:#25d366;text-decoration:none;">+593 98 273 8563</a></p>
+                <p style="margin-top:20px;">¡Estamos para ayudarte en todo momento!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+    <script>
+    // Cierra los paneles flotantes al hacer clic fuera de ellos
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('whatsapp-modal')) {
+            document.getElementById('whatsapp-modal').style.display = 'none';
+        }
+        if (event.target === document.getElementById('email-modal')) {
+            document.getElementById('email-modal').style.display = 'none';
+        }
+        if (event.target === document.getElementById('carrito-modal')) {
+            document.getElementById('carrito-modal').style.display = 'none';
+        }
+    }
+
+    // Mostrar panel de contacto al hacer clic en el menú
+    document.querySelector('a[href="#contacto"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('contacto-modal').style.display = 'flex';
+    });
+
+    // Cerrar el panel al hacer clic fuera del recuadro
+    document.getElementById('contacto-modal').addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+    });
+
+    // Mostrar el panel flotante grande de carrito al hacer clic en el menú
+    document.querySelector('a[href="#carrito"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('carrito-modal').style.display = 'flex';
+    });
+
+    // Cerrar el panel de carrito al hacer clic fuera del recuadro
+    document.getElementById('carrito-modal').addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+    });
+    </script>
+</body>
+</html>
